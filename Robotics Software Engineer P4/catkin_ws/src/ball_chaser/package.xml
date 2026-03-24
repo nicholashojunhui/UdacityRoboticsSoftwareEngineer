@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>ball_chaser</name>
+  <version>1.0.0</version>
+
+  <description>
+    Motion control and target tracking module developed by Nicholas for ROS-Gazebo simulation.
+  </description>
+
+  <maintainer email="nicholashoishere@gmail.com">Nicholas</maintainer>
+  <license>MIT</license>
+
+  <author email="nicholashoishere@gmail.com">Nicholas</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+  <export/>
+</package>

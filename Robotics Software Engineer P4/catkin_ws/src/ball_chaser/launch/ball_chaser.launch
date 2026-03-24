@@ -1,0 +1,17 @@
+<launch>
+
+  <!-- Motion controller node -->
+  <node name="nicholas_motion_controller"
+        pkg="ball_chaser"
+        type="drive_bot"
+        output="screen">
+  </node>
+
+  <!-- Vision tracking node -->
+  <node name="nicholas_visual_tracker"
+        pkg="ball_chaser"
+        type="process_image"
+        output="screen">
+  </node>
+
+</launch>
