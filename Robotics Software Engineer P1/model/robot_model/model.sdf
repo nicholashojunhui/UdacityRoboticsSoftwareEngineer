@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="nicholas_mobile_unit">
+
+    <static>false</static>
+    <pose>0 0 0.15 0 0 0</pose>
+
+    <!-- Base Structure -->
+    <link name="chassis">
+
+      <!-- Physical properties -->
+      <inertial>
+        <mass>2.1</mass>
+        <inertia>
+          <ixx>0.018</ixx>
+          <iyy>0.020</iyy>
+          <izz>0.022</izz>
+        </inertia>
+      </inertial>
+
+      <!-- Collision representation -->
+      <collision name="chassis_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.28</radius>
+            <length>0.18</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <!-- Visual representation -->
+      <visual name="chassis_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.28</radius>
+            <length>0.18</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0.1 0.4 0.7 1</ambient>
+          <diffuse>0.1 0.4 0.7 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+
+    </link>
+
+    <!-- Sensor mount (adds uniqueness) -->
+    <link name="sensor_mount">
+      <pose>0 0 0.25 0 0 0</pose>
+
+      <collision name="sensor_collision">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="sensor_visual">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.05</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.8 0.2 0.2 1</ambient>
+          <diffuse>0.8 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Joint connecting mount -->
+    <joint name="sensor_joint" type="fixed">
+      <parent>chassis</parent>
+      <child>sensor_mount</child>
+    </joint>
+
+  </model>
+</sdf>

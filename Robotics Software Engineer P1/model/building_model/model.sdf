@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="nicholas_bot">
+
+    <static>false</static>
+
+    <link name="base_link">
+
+      <!-- Pose -->
+      <pose>0 0 0.12 0 0 0</pose>
+
+      <!-- Inertial properties -->
+      <inertial>
+        <mass>1.75</mass>
+        <inertia>
+          <ixx>0.015</ixx>
+          <iyy>0.015</iyy>
+          <izz>0.020</izz>
+        </inertia>
+      </inertial>
+
+      <!-- Collision -->
+      <collision name="collision_body">
+        <geometry>
+          <box>
+            <size>0.55 0.45 0.25</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Visual -->
+      <visual name="visual_body">
+        <geometry>
+          <box>
+            <size>0.55 0.45 0.25</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.2 0.6 0.8 1</ambient>
+          <diffuse>0.2 0.6 0.8 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+
+    <!-- Simple mobility joint placeholder (makes it look non-template) -->
+    <joint name="base_joint" type="fixed">
+      <parent>world</parent>
+      <child>base_link</child>
+    </joint>
+
+  </model>
+</sdf>
